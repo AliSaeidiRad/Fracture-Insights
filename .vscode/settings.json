@@ -1,0 +1,20 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultColorDecorators": "never",
+        "editor.formatOnType": true,
+        "editor.wordBasedSuggestions": "off"
+    },
+    "workbench.colorTheme": "Dark Modern",
+    "python.analysis.typeCheckingMode": "standard",
+    "files.associations": {
+        "*.json": "jsonc"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+    }
+}

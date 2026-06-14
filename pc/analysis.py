@@ -123,7 +123,7 @@ class Analysis:
             for i, j in pairs
         ]
 
-        with Pool(processes=int(cpu_count // 2)) as pool:
+        with Pool(processes=int(cpu_count() // 2)) as pool:
             for i, j, sim in tqdm.tqdm(
                 pool.imap_unordered(_compute_similarity, tasks),
                 total=len(tasks),

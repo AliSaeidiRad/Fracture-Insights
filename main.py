@@ -1,4 +1,5 @@
 import os
+import math
 import glob
 import shutil
 import argparse
@@ -14,7 +15,6 @@ import matplotlib.pyplot as plt
 from scipy.stats import gaussian_kde
 
 from pc import Analysis, Curve
-
 
 PRECISION = 0.1
 CLUSTER_RESULT_PREFIX = "Cluster_Result"
@@ -49,8 +49,13 @@ def complete_analysis(args):
 
     plt.rcParams.update({"font.size": 6})
 
+    n_plots = t + 2  # All curves + clusters + heatmap
+
+    ncols = math.ceil(math.sqrt(n_plots))
+    nrows = math.ceil(n_plots / ncols)
+
     fig = plt.figure(dpi=300)
-    ax = fig.add_subplot(2, 3, 1, projection="3d")
+    ax = fig.add_subplot(nrows, ncols, 1, projection="3d")
     for curve, c in zip(analysis.array, c_list):
         if c:
             ax.plot(curve[:, 0], curve[:, 1], curve[:, 2], c=c)
@@ -60,7 +65,7 @@ def complete_analysis(args):
     ax.view_init(azim=70, elev=20)
 
     for i in range(t):
-        ax = fig.add_subplot(2, 3, i + 2, projection="3d")
+        ax = fig.add_subplot(nrows, ncols, i + 2, projection="3d")
         for curve, c in zip(analysis.array, c_list):
             if colors.index(c) == i:
                 ax.plot(curve[:, 0], curve[:, 1], curve[:, 2], c=c)
@@ -76,7 +81,7 @@ def complete_analysis(args):
     elif alpha != 0 and beta != 0:
         name = f"procrustes_{alpha:.2f}_frechet_{beta:.2f}"
 
-    ax = fig.add_subplot(2, 3, 6)
+    ax = fig.add_subplot(nrows, ncols, n_plots)
     sns.set_theme(font_scale=0.7)
     matrix = analysis.similarity_matrix
     matrix = (matrix - np.min(matrix)) / (np.max(matrix) - np.min(matrix))

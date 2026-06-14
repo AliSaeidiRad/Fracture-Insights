@@ -12,23 +12,47 @@ from pc.analysis import Analysis
 
 def plot_figure_cmb(results_dir):
     color_curves = {
-        "A1": {  # Analysis 1
+        "A1": {
             "C1": "red",
             "C2": "gold",
             "C3": "purple",
             "C4": "yellowgreen",
+            "C5": "deepskyblue",
+            "C6": "darkorange",
+            "C7": "hotpink",
+            "C8": "turquoise",
+            "C9": "sienna",
+            "C10": "navy",
+            "C11": "limegreen",
+            "C12": "darkviolet",
         },
-        "A2": {  # Analysis 2
+        "A2": {
             "C1": "darkred",
             "C2": "olive",
             "C3": "mediumvioletred",
             "C4": "darkgreen",
+            "C5": "steelblue",
+            "C6": "chocolate",
+            "C7": "deeppink",
+            "C8": "teal",
+            "C9": "peru",
+            "C10": "midnightblue",
+            "C11": "forestgreen",
+            "C12": "indigo",
         },
-        "A3": {  # Analysis 3
+        "A3": {
             "C1": "orangered",
             "C2": "orange",
             "C3": "crimson",
             "C4": "slateblue",
+            "C5": "dodgerblue",
+            "C6": "coral",
+            "C7": "fuchsia",
+            "C8": "mediumturquoise",
+            "C9": "saddlebrown",
+            "C10": "royalblue",
+            "C11": "springgreen",
+            "C12": "blueviolet",
         },
     }
 
