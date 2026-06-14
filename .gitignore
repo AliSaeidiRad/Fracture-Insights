@@ -7,3 +7,4 @@ __pycache__/
 output/
 output_vtks/
 output_paraview/
+fracture_insights.egg-info/

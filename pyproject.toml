@@ -16,3 +16,6 @@ dependencies = [
     "trimesh>=4.10.0",
     "vtk>=9.5.2",
 ]
+[tool.setuptools.packages.find]
+include = ["pc*"]
+exclude = ["Dataset*", "figures*"]
