@@ -5,11 +5,11 @@ for alpha in $(seq 0.0 0.05 1.0); do
 
     echo "Running with alpha=$alpha beta=$beta"
 
-    python main.py \
+    ./.venv/bin/python main.py \
         --dir-curves Dataset/Curves \
         --t 4 \
         --alpha "$alpha" \
         --beta "$beta" \
         --output "output/a_${alpha}_b_${beta}" \
-        --sample-stl Dataset/Sample/
+        --sample-stl Dataset/Sample/Sample.stl
 done
